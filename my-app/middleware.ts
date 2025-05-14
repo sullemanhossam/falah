@@ -5,10 +5,10 @@ import {
 } from "@convex-dev/auth/nextjs/server";
 
 // // Define which routes are publicly accessible without authentication
-// const isPublicPage = createRouteMatcher([
-//   "/",
-//   "/about", // Add any additional public routes here
-// ]);
+const isPublicPage = createRouteMatcher([
+  "/",
+  "/about", // Add any additional public routes here
+]);
 
 // Define which routes are related to authentication (e.g., sign-in page)
 const isAuthPage = createRouteMatcher([
@@ -21,7 +21,7 @@ export default convexAuthNextjsMiddleware(async (request, { convexAuth }) => {
   const authenticated = await convexAuth.isAuthenticated();
 
   if (!authenticated) {
-    if (isAuthPage(request)) {
+    if (isAuthPage(request)|| isPublicPage(request)) {
       return
     }
     return nextjsMiddlewareRedirect(request, "/authenticate");
