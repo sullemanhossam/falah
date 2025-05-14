@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #cbc5c5;
 }
@@ -13,8 +13,8 @@
     --background: #aca8a8;
     --foreground: #ededed;
   }
-}
-
+} */
+/* 
 html,
 body {
   max-width: 100vw;
@@ -44,4 +44,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
