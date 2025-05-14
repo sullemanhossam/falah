@@ -1,6 +1,6 @@
 // 'use client';
 
-import { RiDeleteBin7Line } from '@remixicon/react';
+import { RiDeleteBin7Line } from "@remixicon/react";
 import {
   Divider,
   List,
@@ -10,62 +10,62 @@ import {
   Tab,
   TabGroup,
   TabList,
-} from '@tremor/react';
+} from "@tremor/react";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 const existingUsers = [
   {
-    name: 'Lena Stone',
-    email: 'lena.stone@company.com',
-    initials: 'LS',
-    currentRole: 'Admin',
-    color: 'bg-blue-500',
+    name: "Lena Stone",
+    email: "lena.stone@company.com",
+    initials: "LS",
+    currentRole: "Admin",
+    color: "bg-blue-500",
   },
   {
-    name: 'John Miller',
-    email: 'john.miller@company.com',
-    initials: 'JM',
-    currentRole: 'Guest',
-    color: 'bg-fuchsia-500',
+    name: "John Miller",
+    email: "john.miller@company.com",
+    initials: "JM",
+    currentRole: "Guest",
+    color: "bg-fuchsia-500",
   },
   {
-    name: 'Emma Crombie',
-    email: 'emma.crombie@company.com',
-    initials: 'EC',
-    currentRole: 'Guest',
-    color: 'bg-violet-500',
+    name: "Emma Crombie",
+    email: "emma.crombie@company.com",
+    initials: "EC",
+    currentRole: "Guest",
+    color: "bg-violet-500",
   },
   {
-    name: 'Sarah Johnson',
-    email: 'sarah.johnson@company.com',
-    initials: 'SJ',
-    currentRole: 'Member',
-    color: 'bg-pink-500',
+    name: "Sarah Johnson",
+    email: "sarah.johnson@company.com",
+    initials: "SJ",
+    currentRole: "Member",
+    color: "bg-pink-500",
   },
   {
-    name: 'Alex Carter',
-    email: 'alex.carter@company.com',
-    initials: 'AC',
-    currentRole: 'Member',
-    color: 'bg-indigo-500',
+    name: "Alex Carter",
+    email: "alex.carter@company.com",
+    initials: "AC",
+    currentRole: "Member",
+    color: "bg-indigo-500",
   },
 ];
 
 const pendingUsers = [
   {
-    name: 'Mike River',
-    email: 'mike.river@company.com',
-    initials: 'MR',
-    color: 'bg-indigo-500',
+    name: "Mike River",
+    email: "mike.river@company.com",
+    initials: "MR",
+    color: "bg-indigo-500",
   },
   {
-    name: 'Aaron Hill',
-    email: 'aaron.hill@company.com',
-    initials: 'AH',
-    color: 'bg-fuchsia-500',
+    name: "Aaron Hill",
+    email: "aaron.hill@company.com",
+    initials: "AH",
+    color: "bg-fuchsia-500",
   },
 ];
 
@@ -109,7 +109,7 @@ export default function Example() {
                     <span
                       className={classNames(
                         user.color,
-                        'flex h-9 w-9 shrink-0 items-center justify-center rounded-tremor-full text-tremor-label text-tremor-brand-inverted dark:text-tremor-brand-inverted',
+                        "flex h-9 w-9 shrink-0 items-center justify-center rounded-tremor-full text-tremor-label text-tremor-brand-inverted dark:text-tremor-brand-inverted",
                       )}
                       aria-hidden={true}
                     >
@@ -170,7 +170,7 @@ export default function Example() {
                     <span
                       className={classNames(
                         user.color,
-                        'flex h-9 w-9 shrink-0 items-center justify-center rounded-tremor-full text-tremor-label text-tremor-brand-inverted dark:text-tremor-brand-inverted',
+                        "flex h-9 w-9 shrink-0 items-center justify-center rounded-tremor-full text-tremor-label text-tremor-brand-inverted dark:text-tremor-brand-inverted",
                       )}
                       aria-hidden={true}
                     >

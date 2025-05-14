@@ -1,36 +1,36 @@
 // 'use client';
 
-import { RiExternalLinkLine } from '@remixicon/react';
-import { Card, Tab, TabGroup, TabList } from '@tremor/react';
+import { RiExternalLinkLine } from "@remixicon/react";
+import { Card, Tab, TabGroup, TabList } from "@tremor/react";
 
 const usage = [
   {
     id: 1,
-    resource: 'Requests per day',
-    usage: '145',
-    maximum: '1,000',
-    href: '#',
+    resource: "Requests per day",
+    usage: "145",
+    maximum: "1,000",
+    href: "#",
   },
   {
     id: 2,
-    resource: 'Storage per month',
-    usage: '1.1',
-    maximum: '10 GB',
-    href: '#',
+    resource: "Storage per month",
+    usage: "1.1",
+    maximum: "10 GB",
+    href: "#",
   },
   {
     id: 3,
-    resource: 'Members',
-    usage: '10',
-    maximum: '25',
-    href: '#',
+    resource: "Members",
+    usage: "10",
+    maximum: "25",
+    href: "#",
   },
   {
     id: 4,
-    resource: 'Availability',
-    usage: '95.1',
-    maximum: '99.9%',
-    href: '#',
+    resource: "Availability",
+    usage: "95.1",
+    maximum: "99.9%",
+    href: "#",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function Example() {
           Workspace usage
         </h4>
         <p className="mt-1 text-tremor-default leading-6 text-tremor-content dark:text-dark-tremor-content">
-          Overview of all activities of your workspace. Learn more about our{' '}
+          Overview of all activities of your workspace. Learn more about our{" "}
           <a
             href="#"
             className="inline-flex items-center gap-1 text-tremor-brand hover:underline hover:underline-offset-4 dark:text-dark-tremor-brand"

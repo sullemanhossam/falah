@@ -3,10 +3,9 @@ import {
   RiErrorWarningFill,
   RiFileCloseLine,
   RiUpload2Line,
-} from '@remixicon/react';
+} from "@remixicon/react";
 
-
-export  function ImageUpload() {
+export function ImageUpload() {
   return (
     <>
       <div className="sm:mx-auto sm:max-w-lg">
@@ -101,7 +100,7 @@ export  function ImageUpload() {
   );
 }
 
-export  function ImageUploadError() {
+export function ImageUploadError() {
   return (
     <>
       <div className="sm:mx-auto sm:max-w-lg">

@@ -2,7 +2,9 @@ export default function PrayerBoard() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-base/7 font-semibold text-indigo-600">London road Masjid</h2>
+        <h2 className="text-base/7 font-semibold text-indigo-600">
+          London road Masjid
+        </h2>
         <p className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
           Prayers for 12th May 2025
         </p>
@@ -16,10 +18,14 @@ export default function PrayerBoard() {
                 className="h-80 object-cover object-left"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Performance</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Alhamdu lillahil-ladhi ahyana ba'da ma amatana wa-ilayhin-nushur</p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-Fajir               </p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Performance
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Alhamdu lillahil-ladhi ahyana ba'da ma amatana
+                  wa-ilayhin-nushur
+                </p>
+                <p className="mt-2 max-w-lg text-sm/6 text-gray-600">Fajir </p>
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
@@ -33,11 +39,15 @@ Fajir               </p>
                 className="h-80 object-cover object-left lg:object-right"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Releases</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Push to deploy</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Releases
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Push to deploy
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae
-                  odio.
+                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus
+                  massa, laoreet dapibus ex elit vitae odio.
                 </p>
               </div>
             </div>
@@ -52,10 +62,15 @@ Fajir               </p>
                 className="h-80 object-cover object-left"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Speed</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Built for power users</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Speed
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Built for power users
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Sed congue eros non finibus molestie. Vestibulum euismod augue.
+                  Sed congue eros non finibus molestie. Vestibulum euismod
+                  augue.
                 </p>
               </div>
             </div>
@@ -70,10 +85,15 @@ Fajir               </p>
                 className="h-80 object-cover"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Integrations</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Connect your favorite tools</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Integrations
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Connect your favorite tools
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus arcu.
+                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam
+                  maximus arcu.
                 </p>
               </div>
             </div>
@@ -88,10 +108,15 @@ Fajir               </p>
                 className="h-80 object-cover"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Network</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Globally distributed CDN</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Network
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Globally distributed CDN
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Aenean vulputate justo commodo auctor vehicula in malesuada semper.
+                  Aenean vulputate justo commodo auctor vehicula in malesuada
+                  semper.
                 </p>
               </div>
             </div>
@@ -100,5 +125,5 @@ Fajir               </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

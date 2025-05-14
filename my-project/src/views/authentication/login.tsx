@@ -5,7 +5,7 @@
 
 // 'use client';
 
-import { Divider, TextInput } from '@tremor/react';
+import { Divider, TextInput } from "@tremor/react";
 
 const GoogleIcon = (props) => (
   <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -43,7 +43,7 @@ export default function Login() {
             Sign in to your account
           </h3>
           <p className="mt-2 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-            Don't have an account?{' '}
+            Don't have an account?{" "}
             <a
               href="#"
               className="font-medium text-tremor-brand hover:text-tremor-brand-emphasis dark:text-dark-tremor-brand hover:dark:text-dark-tremor-brand-emphasis"
@@ -113,7 +113,7 @@ export default function Login() {
             </button>
           </form>
           <p className="mt-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-            Forgot your password?{' '}
+            Forgot your password?{" "}
             <a
               href="#"
               className="font-medium text-tremor-brand hover:text-tremor-brand-emphasis dark:text-dark-tremor-brand hover:dark:text-dark-tremor-brand-emphasis"

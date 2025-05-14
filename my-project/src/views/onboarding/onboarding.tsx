@@ -1,39 +1,39 @@
 // 'use client';
 
-import { RiCheckboxCircleFill } from '@remixicon/react';
-import { ProgressBar } from '@tremor/react';
+import { RiCheckboxCircleFill } from "@remixicon/react";
+import { ProgressBar } from "@tremor/react";
 
 const steps = [
   {
-    id: '1.',
-    title: 'Set up your organization',
+    id: "1.",
+    title: "Set up your organization",
     description:
-      'You successfully created your account. You can edit your account details anytime.',
-    status: 'complete',
-    href: '#',
+      "You successfully created your account. You can edit your account details anytime.",
+    status: "complete",
+    href: "#",
   },
   {
-    id: '2.',
-    title: 'Connect to data source',
+    id: "2.",
+    title: "Connect to data source",
     description:
-      'The platform supports more than 50 databases and data warehouses.',
-    status: 'open',
-    href: '#',
+      "The platform supports more than 50 databases and data warehouses.",
+    status: "open",
+    href: "#",
   },
   {
-    id: '3.',
-    title: 'Create metrics',
-    description: 'Create metrics using custom SQL or our intuitive query mask.',
-    status: 'open',
-    href: '#',
+    id: "3.",
+    title: "Create metrics",
+    description: "Create metrics using custom SQL or our intuitive query mask.",
+    status: "open",
+    href: "#",
   },
   {
-    id: '4.',
-    title: 'Create report',
+    id: "4.",
+    title: "Create report",
     description:
-      'Transform metrics into visualizations and arrange them visually.',
-    status: 'open',
-    href: '#',
+      "Transform metrics into visualizations and arrange them visually.",
+    status: "open",
+    href: "#",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Example() {
               className="relative rounded-tremor-default border border-tremor-border bg-tremor-background p-4 dark:border-dark-tremor-border dark:bg-dark-tremor-background"
             >
               <div className="flex items-start space-x-3">
-                {step.status === 'complete' ? (
+                {step.status === "complete" ? (
                   <RiCheckboxCircleFill
                     className="size-6 shrink-0 text-tremor-brand dark:text-dark-tremor-brand"
                     aria-hidden={true}
@@ -95,7 +95,7 @@ export default function Example() {
             Need help?
           </h4>
           <p className="mt-1 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-            Connect with a member of our team at{' '}
+            Connect with a member of our team at{" "}
             <a
               href="mailto:support@company.com"
               className="font-medium text-tremor-brand dark:text-dark-tremor-brand"

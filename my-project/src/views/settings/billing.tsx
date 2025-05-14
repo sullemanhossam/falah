@@ -1,26 +1,26 @@
 // 'use client';
 
-import { RiExternalLinkLine, RiFileLine } from '@remixicon/react';
-import { List, ListItem, Tab, TabGroup, TabList } from '@tremor/react';
+import { RiExternalLinkLine, RiFileLine } from "@remixicon/react";
+import { List, ListItem, Tab, TabGroup, TabList } from "@tremor/react";
 
 const bills = [
   {
     id: 1,
-    month: 'Sept 23',
-    status: 'unpaid',
-    href: '#',
+    month: "Sept 23",
+    status: "unpaid",
+    href: "#",
   },
   {
     id: 2,
-    month: 'Aug 23',
-    status: 'paid',
-    href: '#',
+    month: "Aug 23",
+    status: "paid",
+    href: "#",
   },
   {
     id: 3,
-    month: 'Jul 23',
-    status: 'paid',
-    href: '#',
+    month: "Jul 23",
+    status: "paid",
+    href: "#",
   },
 ];
 
@@ -95,14 +95,14 @@ export default function Example() {
             </List>
           </div>
           <p className="mt-6 text-tremor-default leading-6 text-tremor-content dark:text-dark-tremor-content">
-            Need help? Reach out to our{' '}
+            Need help? Reach out to our{" "}
             <a
               href="#"
               className="inline-flex items-center gap-1 text-tremor-brand hover:underline hover:underline-offset-4 dark:text-dark-tremor-brand"
             >
               help desk
               <RiExternalLinkLine className="size-4" aria-hidden={true} />
-            </a>{' '}
+            </a>{" "}
             upgrade options if you need assistance.
           </p>
         </div>

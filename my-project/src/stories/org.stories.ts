@@ -1,14 +1,14 @@
-import Org from '@/views/organisation/org';
-import type { Meta, StoryObj } from '@storybook/react';
+import Org from "@/views/organisation/org";
+import type { Meta, StoryObj } from "@storybook/react";
 
 // Define metadata for the story
 const meta = {
-  title: 'Org/Summary',
+  title: "Org/Summary",
   component: Org,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Org>; // <- Added `typeof Org` for better type inference
 
 export default meta;

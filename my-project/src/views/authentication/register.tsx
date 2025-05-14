@@ -16,7 +16,7 @@
 
 // 'use client';
 
-import { Card, TextInput } from '@tremor/react';
+import { Card, TextInput } from "@tremor/react";
 
 const Logo = (props) => (
   <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -126,14 +126,14 @@ export default function Register() {
               Create account
             </button>
             <p className="text-center text-tremor-label text-tremor-content dark:text-dark-tremor-content">
-              By signing in, you agree to our{' '}
+              By signing in, you agree to our{" "}
               <a
                 href="#"
                 className="capitalize text-tremor-brand hover:text-tremor-brand-emphasis dark:text-dark-tremor-brand hover:dark:text-dark-tremor-brand-emphasis"
               >
                 Terms of use
-              </a>{' '}
-              and{' '}
+              </a>{" "}
+              and{" "}
               <a
                 href="#"
                 className="capitalize text-tremor-brand hover:text-tremor-brand-emphasis dark:text-dark-tremor-brand hover:dark:text-dark-tremor-brand-emphasis"
@@ -144,7 +144,7 @@ export default function Register() {
           </form>
         </Card>
         <p className="mt-6 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <a
             href="#"
             className="font-medium text-tremor-brand hover:text-tremor-brand-emphasis dark:text-dark-tremor-brand hover:dark:text-dark-tremor-brand-emphasis"

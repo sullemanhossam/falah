@@ -1,15 +1,20 @@
-
-import "@/app/globals.css"
-
-
 export default function Org({
-  name= "Northampton Mosque and Islamic Centre", 
-  address = {firstline:"46 Clare Street", city: "Northampton", postcode:"NN1 3LS"}, 
+  name = "Northampton Mosque and Islamic Centre",
+  address = {
+    firstline: "46 Clare Street",
+    city: "Northampton",
+    postcode: "NN1 3LS",
+  },
   features = [
-  { name: 'Entrances', description: 'Main entrance is wheelchair accessible with automatic doors.' },
-  { name: 'Parking', description: 'Nearing full capacity' },
-  { name: 'Genders', description: 'Mens and womens prayer room' },
-]}) {
+    {
+      name: "Entrances",
+      description:
+        "Main entrance is wheelchair accessible with automatic doors.",
+    },
+    { name: "Parking", description: "Nearing full capacity" },
+    { name: "Genders", description: "Mens and womens prayer room" },
+  ],
+}) {
   return (
     <div className="bg-white">
       <div aria-hidden="true" className="relative">
@@ -23,7 +28,9 @@ export default function Org({
 
       <div className="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
         <div className="mx-auto max-w-2xl text-center lg:max-w-4xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{name}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            {name}
+          </h2>
           <div className="flex">
             {Object.entries(address).map(([key, value], index) => (
               <p key={index} className="mt-4 m-1 tracking-tight text-gray-500">
@@ -37,21 +44,25 @@ export default function Org({
           {features.map((feature) => (
             <div key={feature.name} className="border-t border-gray-200 pt-4">
               <dt className="font-medium text-gray-900">{feature.name}</dt>
-              <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
+              <dd className="mt-2 text-sm text-gray-500">
+                {feature.description}
+              </dd>
             </div>
           ))}
         </dl>
-        <OrgActivities/>
+        <OrgActivities />
       </div>
     </div>
-  )
+  );
 }
 
 export function OrgActivities() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+        <h2 className="text-base/7 font-semibold text-indigo-600">
+          Deploy faster
+        </h2>
         <p className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
           Everything you need to deploy your app
         </p>
@@ -65,11 +76,16 @@ export function OrgActivities() {
                 className="h-80 object-cover object-left"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Events</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Lightning-fast builds</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Events
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Lightning-fast builds
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus
-                  egestas sem pellentesque.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  gravida justo et nulla efficitur, maximus egestas sem
+                  pellentesque.
                 </p>
               </div>
             </div>
@@ -84,11 +100,15 @@ export function OrgActivities() {
                 className="h-80 object-cover object-left lg:object-right"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Prayers</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Push to deploy</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Prayers
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Push to deploy
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae
-                  odio.
+                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus
+                  massa, laoreet dapibus ex elit vitae odio.
                 </p>
               </div>
             </div>
@@ -103,10 +123,15 @@ export function OrgActivities() {
                 className="h-80 object-cover object-left"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Classes</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Built for power users</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Classes
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Built for power users
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Sed congue eros non finibus molestie. Vestibulum euismod augue.
+                  Sed congue eros non finibus molestie. Vestibulum euismod
+                  augue.
                 </p>
               </div>
             </div>
@@ -121,10 +146,15 @@ export function OrgActivities() {
                 className="h-80 object-cover"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Services</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Connect your favorite tools</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Services
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Connect your favorite tools
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus arcu.
+                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam
+                  maximus arcu.
                 </p>
               </div>
             </div>
@@ -139,10 +169,15 @@ export function OrgActivities() {
                 className="h-80 object-cover"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm/4 font-semibold text-indigo-600">Network</h3>
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Globally distributed CDN</p>
+                <h3 className="text-sm/4 font-semibold text-indigo-600">
+                  Network
+                </h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  Globally distributed CDN
+                </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Aenean vulputate justo commodo auctor vehicula in malesuada semper.
+                  Aenean vulputate justo commodo auctor vehicula in malesuada
+                  semper.
                 </p>
               </div>
             </div>
@@ -151,5 +186,5 @@ export function OrgActivities() {
         </div>
       </div>
     </div>
-  )
+  );
 }

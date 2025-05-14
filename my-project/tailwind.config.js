@@ -1,7 +1,5 @@
 const config = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       keyframes: {
@@ -68,5 +66,5 @@ const config = {
     },
   },
   plugins: [require("@tailwindcss/forms")],
-}
-export default config
+};
+export default config;
