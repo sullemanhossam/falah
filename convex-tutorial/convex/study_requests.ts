@@ -1,5 +1,12 @@
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
+
+export const get = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db.query("study_requests").collect();
+  },
+});
 
 export const createStudyRequest = mutation({
   args: {
@@ -14,9 +21,14 @@ export const createStudyRequest = mutation({
 },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
-    await ctx.db.insert("trials", {
+    await ctx.db.insert("study_requests", {
       user: args.user,
-      body: args.body,
+      sponsor_id: args.sponsor_id,
+      title: args.title,
+      description: args.description,
+      therapeutic_areas: args.therapeutic_areas,
+      region: args.region,
+      status: args.status,
     });
   },
 });
