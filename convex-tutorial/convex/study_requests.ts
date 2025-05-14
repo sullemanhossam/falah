@@ -18,7 +18,7 @@ export const createStudyRequest = mutation({
     region: v.string(),
     status: v.string(),
     created_at: v.string(),
-},
+  },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
     await ctx.db.insert("study_requests", {

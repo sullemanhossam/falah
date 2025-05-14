@@ -13,8 +13,8 @@ export const createMilestone = mutation({
     study_id: v.string(),
     title: v.string(),
     due_date: v.string(),
-    is_completed: v.string()
-},
+    is_completed: v.string(),
+  },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
     await ctx.db.insert("milestones", {

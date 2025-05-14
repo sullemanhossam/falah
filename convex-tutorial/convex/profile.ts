@@ -16,8 +16,8 @@ export const createProfile = mutation({
     location: v.string(),
     phone: v.string(),
     expertise: v.string(),
-    fee_structure: v.string()
-},
+    fee_structure: v.string(),
+  },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
     await ctx.db.insert("profile", {
