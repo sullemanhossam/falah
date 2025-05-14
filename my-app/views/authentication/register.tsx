@@ -24,7 +24,7 @@ const Logo = (props) => (
   </svg>
 );
 
-export default function Example() {
+export default function Register() {
   return (
     <>
       <div className="flex min-h-screen flex-1 flex-col justify-center px-4 py-10 lg:px-6">

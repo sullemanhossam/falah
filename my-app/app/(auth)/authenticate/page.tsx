@@ -1,12 +1,19 @@
 "use client";
 
+import Login from "@/views/authentication/login";
+import Register from "@/views/authentication/register";
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
  
 export default function Authenticate({ mode = "signIn" }: { mode?: "signIn" | "signUp" }) {
   const { signIn } = useAuthActions();
   const [step, setStep] = useState<"signUp" | "signIn">(mode);
+
+if (step == "signIn") {
   return (
+    <>
+    <Login/>
+    {/* <>{step}</>
     <form
       onSubmit={(event) => {
         event.preventDefault();
@@ -26,6 +33,15 @@ export default function Authenticate({ mode = "signIn" }: { mode?: "signIn" | "s
       >
         {step === "signIn" ? "Sign up instead" : "Sign in instead"}
       </button>
-    </form>
+    </form> */}
+    </>
   );
+} else {
+return (
+    <>
+    <Register/>
+    </>
+  );
+}
+ 
 }
