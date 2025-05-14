@@ -1,0 +1,1 @@
+npx convex import --table tasks convex/seed/tasks/sampleData.jsonl
