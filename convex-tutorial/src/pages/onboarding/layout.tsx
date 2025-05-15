@@ -1,4 +1,4 @@
-import React from "react"
+import React, { createContext, useState } from "react"
 import { useLocation, Link, Outlet } from "react-router"
 import { Button } from "../../components/Button"
 import useScroll from "../../lib/useScroll"
@@ -53,9 +53,10 @@ const StepProgress = ({ steps }: StepProgressProps) => {
   )
 }
 
+
 const OnboardingLayout: React.FC = () => {
   const scrolled = useScroll(15)
-
+  
   return (
     <>
       <header
@@ -82,7 +83,7 @@ const OnboardingLayout: React.FC = () => {
         </Button>
       </header>
       <main id="main-content" className="mx-auto mb-20 mt-28 max-w-lg">
-        <Outlet />
+      <Outlet />
       </main>
     </>
   )

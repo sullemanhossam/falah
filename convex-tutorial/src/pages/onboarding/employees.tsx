@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 
 const employeeCounts = [
   { value: "1", label: "1" },
@@ -11,6 +11,9 @@ const employeeCounts = [
 ]
 
 export default function Employees() {
+    const location = useLocation();
+    const { companyType } = location.state || {};
+
   const [selectedEmployeeCount, setSelectedEmployeeCount] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
@@ -20,7 +23,7 @@ export default function Employees() {
     setLoading(true)
     setTimeout(() => {
       console.log("Form submitted with employee count:", selectedEmployeeCount)
-      navigate("/onboarding/emplo")
+      navigate("/onboarding/details",{ state: { companyType: companyType, employeeCount: selectedEmployeeCount } })
     }, 600)
   }
 

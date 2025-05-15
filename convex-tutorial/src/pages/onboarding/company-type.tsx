@@ -7,7 +7,7 @@ const companyType = [
 ]
 
 export default function CompanyType() {
-  const [selectedEmployeeCount, setSelectedEmployeeCount] = useState("")
+  const [selectedCompanyType, setSelectedCompanyType] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
@@ -15,8 +15,9 @@ export default function CompanyType() {
     e.preventDefault()
     setLoading(true)
     setTimeout(() => {
-      console.log("Form submitted with employee count:", selectedEmployeeCount)
-      navigate("/organization/onboarding/employees")
+      console.log("Form submitted with employee count:", selectedCompanyType)
+      // pass the selected company type through react routers props so the next page can access this 
+      navigate("/onboarding/employees",{ state: { companyType: selectedCompanyType } })
     }, 600)
   }
 
@@ -39,7 +40,7 @@ export default function CompanyType() {
               <label
                 key={count.value}
                 className={`block border rounded-xl p-4 cursor-pointer transition ${
-                  selectedEmployeeCount === count.value
+                  selectedCompanyType === count.value
                     ? "border-blue-600 bg-blue-50 dark:bg-gray-800"
                     : "border-gray-300 hover:border-blue-400"
                 }`}
@@ -52,8 +53,8 @@ export default function CompanyType() {
                   type="radio"
                   name="employeeCount"
                   value={count.value}
-                  checked={selectedEmployeeCount === count.value}
-                  onChange={() => setSelectedEmployeeCount(count.value)}
+                  checked={selectedCompanyType === count.value}
+                  onChange={() => setSelectedCompanyType(count.value)}
                   className="sr-only"
                 />
                 <span className="text-gray-900 dark:text-gray-100">
@@ -74,9 +75,9 @@ export default function CompanyType() {
           </button>
           <button
             type="submit"
-            disabled={!selectedEmployeeCount || loading}
+            disabled={!selectedCompanyType || loading}
             className={`px-6 py-2 rounded-md text-white font-medium transition ${
-              loading || !selectedEmployeeCount
+              loading || !selectedCompanyType
                 ? "bg-gray-300 cursor-not-allowed"
                 : "bg-blue-600 hover:bg-blue-700"
             }`}

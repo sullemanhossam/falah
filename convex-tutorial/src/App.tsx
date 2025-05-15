@@ -9,6 +9,7 @@ import Employees from "./pages/onboarding/employees";
 import CompanyType from "./pages/onboarding/company-type";
 import Spinner from "./loading";
 import Redirect from "./wildcard";
+import Details from "./pages/onboarding/details";
 
 export default function App() {
   return (
@@ -26,8 +27,10 @@ export default function App() {
         <Routes>
           {/* onboarding */}
            <Route element={<OnboardingLayout />}>
-           <Route path="organization/onboarding/company-type" element={<CompanyType />} />
-           <Route path="organization/onboarding/employees" element={<Employees />} />
+           <Route path="/onboarding/company-type" element={<CompanyType />} />
+           <Route path="/onboarding/employees" element={<Employees />} />
+           <Route path="/onboarding/details" element={<Details />} />
+
            </Route>
            
     
