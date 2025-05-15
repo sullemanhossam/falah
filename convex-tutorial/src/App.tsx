@@ -2,9 +2,11 @@ import "./index.css";
 import { AuthLoading, Unauthenticated, Authenticated } from "convex/react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router";
-import { Authenticate } from "./pages/auth/authenticate";
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
+import OnboardingLayout from "./pages/onboarding/layout";
+import Employees from "./pages/onboarding/employees";
+import CompanyType from "./pages/onboarding/company-type";
 
 export default function App() {
   return (
@@ -20,6 +22,12 @@ export default function App() {
       </Unauthenticated>
       <Authenticated>
         <Routes>
+          {/* onboarding */}
+           <Route element={<OnboardingLayout />}>
+           <Route path="organization/onboarding/employees" element={<Employees />} />
+           <Route path="organization/onboarding/company-type" element={<CompanyType />} />
+           </Route>
+           
           <Route path="/" element={<p>Authenticated</p>} />
         </Routes>
       </Authenticated>
