@@ -30,9 +30,9 @@ export default function Employees() {
         <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
           How many employees does your company have?
         </h1>
-        <p className="mt-6 text-gray-700 dark:text-gray-300">
+        {/* <p className="mt-6 text-gray-700 dark:text-gray-300">
           This will help us customize the experience to you.
-        </p>
+        </p> */}
       </div>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4">

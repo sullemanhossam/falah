@@ -24,7 +24,7 @@ export default function CompanyType() {
     <main className="max-w-xl mx-auto p-4">
       <div className="animate-fade-in">
         <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
-          How many employees does your company have?
+          What type of organization are you?
         </h1>
         <p className="mt-6 text-gray-700 dark:text-gray-300">
           This will help us customize the experience to you.

@@ -7,12 +7,13 @@ import Register from "./pages/auth/register";
 import OnboardingLayout from "./pages/onboarding/layout";
 import Employees from "./pages/onboarding/employees";
 import CompanyType from "./pages/onboarding/company-type";
+import Spinner from "./loading";
 
 export default function App() {
   return (
     <BrowserRouter>
       <AuthLoading>
-        <p>loading auth</p>
+      <Spinner/>
       </AuthLoading>
       <Unauthenticated>
         <Routes>
@@ -27,7 +28,6 @@ export default function App() {
            <Route path="organization/onboarding/employees" element={<Employees />} />
            <Route path="organization/onboarding/company-type" element={<CompanyType />} />
            </Route>
-           
           <Route path="/" element={<p>Authenticated</p>} />
         </Routes>
       </Authenticated>
