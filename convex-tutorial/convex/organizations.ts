@@ -12,24 +12,17 @@ export const createOrganization = mutation({
   args: {
     name: v.string(),
     type: v.string(),
-    description: v.string(),
-    headquaters: v.string(),
-    website: v.string(),
-    contact_email: v.string(),
-    phone: v.string(),
-    created_at: v.string(),
-    // updated_at: v.string(),
+    companySize: v.string(),
+    adminId: v.id("users"), // ✅ references the `users` table
   },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
-    // await ctx.db.insert("organizations", {
-    //   name: args.name,
-    //   type: args.type,
-    //   description: args.description,
-    //   headquaters: args.headquaters,
-    //   website: args.website,
-    //   contact_email: args.contact_email,
-    //   phone: args.phone,
-    // });
+    
+    await ctx.db.insert("organizations", {
+      name: args.name,
+      type: args.type,
+      companySize: args.companySize,
+      adminId: args.adminId, // ✅ stores reference
+    });
   },
 });

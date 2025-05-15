@@ -21,7 +21,13 @@ const schema = defineSchema({
   organizations: defineTable({
     name: v.string(),
     type: v.string(),
-    description: v.string(),
+    companySize: v.string(),
+    adminId: v.id("users"),
+    // updated_at: v.string(),
+  }),
+  employees: defineTable({
+    organizationId: v.id("organizations"),
+    userId: v.id("users"),
     // updated_at: v.string(),
   }),
   milestones: defineTable({

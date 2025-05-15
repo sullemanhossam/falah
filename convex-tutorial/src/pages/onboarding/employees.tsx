@@ -20,7 +20,7 @@ export default function Employees() {
     setLoading(true)
     setTimeout(() => {
       console.log("Form submitted with employee count:", selectedEmployeeCount)
-      navigate("/onboarding/infrastructure")
+      navigate("/onboarding/emplo")
     }, 600)
   }
 

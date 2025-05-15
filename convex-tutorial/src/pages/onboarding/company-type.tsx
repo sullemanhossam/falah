@@ -16,7 +16,7 @@ export default function CompanyType() {
     setLoading(true)
     setTimeout(() => {
       console.log("Form submitted with employee count:", selectedEmployeeCount)
-      navigate("/onboarding/infrastructure")
+      navigate("/organization/onboarding/employees")
     }, 600)
   }
 

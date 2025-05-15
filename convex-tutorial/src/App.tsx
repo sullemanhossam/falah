@@ -8,6 +8,7 @@ import OnboardingLayout from "./pages/onboarding/layout";
 import Employees from "./pages/onboarding/employees";
 import CompanyType from "./pages/onboarding/company-type";
 import Spinner from "./loading";
+import Redirect from "./wildcard";
 
 export default function App() {
   return (
@@ -25,10 +26,13 @@ export default function App() {
         <Routes>
           {/* onboarding */}
            <Route element={<OnboardingLayout />}>
-           <Route path="organization/onboarding/employees" element={<Employees />} />
            <Route path="organization/onboarding/company-type" element={<CompanyType />} />
+           <Route path="organization/onboarding/employees" element={<Employees />} />
            </Route>
-          <Route path="/" element={<p>Authenticated</p>} />
+           
+    
+            /this wilcard wrapper recieves the user upon authenticating and directs them to their respected area
+          <Route path="/*" element={<Redirect/>} />
         </Routes>
       </Authenticated>
     </BrowserRouter>
