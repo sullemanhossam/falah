@@ -1,41 +1,41 @@
-import { RiAddFill } from '@remixicon/react';
-import { useQuery } from 'convex/react';
-import { api } from '../../../convex/_generated/api';
+import { RiAddFill } from "@remixicon/react";
+import { useQuery } from "convex/react";
+import { api } from "../../../convex/_generated/api";
 
 export default function StudyRequestsCell() {
   const study_requests = useQuery(api.study_requests.get);
 
   if (!study_requests) {
     return (
-         <div className="relative">
-          <ul
-            role="list"
-            className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      <div className="relative">
+        <ul
+          role="list"
+          className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <li className="h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle" />
+          <li className="h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle" />
+          <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
+          <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
+          <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
+          <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
+        </ul>
+        {/* Change dark:from-gray-950 in parent below according to your dark mode background */}
+        <div className="absolute inset-x-0 bottom-0 flex h-32 flex-col items-center justify-center bg-gradient-to-t from-white to-transparent dark:from-gray-950">
+          <p className="font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
+            No study requests created yet
+          </p>
+          <p className="mt-2 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
+            Create your first study request to get started
+          </p>
+          <button
+            type="button"
+            className="mt-6 inline-flex items-center gap-1.5 whitespace-nowrap rounded-tremor-small bg-tremor-brand px-3 py-2 text-tremor-default font-medium text-tremor-brand-inverted shadow-tremor-dropdown hover:bg-tremor-brand-emphasis dark:bg-dark-tremor-brand dark:text-dark-tremor-brand-inverted dark:shadow-dark-tremor-dropdown dark:hover:bg-dark-tremor-brand-emphasis"
           >
-            <li className="h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle" />
-            <li className="h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle" />
-            <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
-            <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
-            <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
-            <li className="hidden h-44 rounded-tremor-default bg-tremor-background-subtle dark:bg-dark-tremor-background-subtle sm:block" />
-          </ul>
-          {/* Change dark:from-gray-950 in parent below according to your dark mode background */}
-          <div className="absolute inset-x-0 bottom-0 flex h-32 flex-col items-center justify-center bg-gradient-to-t from-white to-transparent dark:from-gray-950">
-            <p className="font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
-              No study requests created yet
-            </p>
-            <p className="mt-2 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Create your first study request to get started
-            </p>
-            <button
-              type="button"
-              className="mt-6 inline-flex items-center gap-1.5 whitespace-nowrap rounded-tremor-small bg-tremor-brand px-3 py-2 text-tremor-default font-medium text-tremor-brand-inverted shadow-tremor-dropdown hover:bg-tremor-brand-emphasis dark:bg-dark-tremor-brand dark:text-dark-tremor-brand-inverted dark:shadow-dark-tremor-dropdown dark:hover:bg-dark-tremor-brand-emphasis"
-            >
-              <RiAddFill className="-ml-1 size-5 shrink-0" aria-hidden={true} />
-              Browse studies
-            </button>
-          </div>
+            <RiAddFill className="-ml-1 size-5 shrink-0" aria-hidden={true} />
+            Browse studies
+          </button>
         </div>
+      </div>
     );
   }
 
@@ -94,13 +94,13 @@ export default function StudyRequestsCell() {
     //     ))}
     //   </dl>
     // </>
-      <>
+    <>
       {study_requests.map((request: any) => (
-          <div key={request._id} className="p-4 border-b border-gray-200">
+        <div key={request._id} className="p-4 border-b border-gray-200">
           <h3 className="text-lg font-semibold">{request.title}</h3>
           <p className="text-sm text-gray-600">{request.description}</p>
         </div>
       ))}
-      </>
+    </>
   );
 }
