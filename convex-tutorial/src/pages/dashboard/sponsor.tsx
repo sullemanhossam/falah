@@ -6,7 +6,7 @@
 
 import MilestonesCell from "../../cells/milestones";
 import ProposalsCell from "../../cells/proposals";
-import StudyRequestsCell from "../../cells/study_requests";
+import StudyRequestsCell from "../../cells/study_requests/study_requests";
 
 export default function SponsorDashboard() {
   return (

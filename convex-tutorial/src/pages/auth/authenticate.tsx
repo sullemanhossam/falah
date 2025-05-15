@@ -1,9 +1,18 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
+import Register from "./register";
+import Login from "./login";
 
-export function SignIn() {
+export function Authenticate() {
   const { signIn } = useAuthActions();
   const [step, setStep] = useState<"signUp" | "signIn">("signIn");
+
+  if (step == "signUp") {
+    return <Register setStep step signIn />;
+  } else {
+    return <Login setStep step signIn />;
+  }
+
   return (
     <form
       onSubmit={(event) => {

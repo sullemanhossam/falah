@@ -21,14 +21,14 @@ export const createStudyRequest = mutation({
   },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
-    await ctx.db.insert("study_requests", {
-      user: args.user,
-      sponsor_id: args.sponsor_id,
-      title: args.title,
-      description: args.description,
-      therapeutic_areas: args.therapeutic_areas,
-      region: args.region,
-      status: args.status,
-    });
+    // await ctx.db.insert("study_requests", {
+    //   user: args.user,
+    //   sponsor_id: args.sponsor_id,
+    //   title: args.title,
+    //   description: args.description,
+    //   therapeutic_areas: args.therapeutic_areas,
+    //   region: args.region,
+    //   status: args.status,
+    // });
   },
 });

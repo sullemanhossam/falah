@@ -17,11 +17,11 @@ export const createMilestone = mutation({
   },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
-    await ctx.db.insert("milestones", {
-      study_id: args.study_id,
-      title: args.title,
-      due_date: args.due_date,
-      is_completed: args.is_completed,
-    });
+    // await ctx.db.insert("milestones", {
+    //   study_id: args.study_id,
+    //   title: args.title,
+    //   due_date: args.due_date,
+    //   is_completed: args.is_completed,
+    // });
   },
 });

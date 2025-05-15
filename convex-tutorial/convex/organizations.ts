@@ -22,15 +22,14 @@ export const createOrganization = mutation({
   },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
-    await ctx.db.insert("organizations", {
-      name: args.name,
-      type: args.type,
-      description: args.description,
-      headquaters: args.headquaters,
-      website: args.website,
-      contact_email: args.contact_email,
-      phone: args.phone,
-      created_at: Date.now(),
-    });
+    // await ctx.db.insert("organizations", {
+    //   name: args.name,
+    //   type: args.type,
+    //   description: args.description,
+    //   headquaters: args.headquaters,
+    //   website: args.website,
+    //   contact_email: args.contact_email,
+    //   phone: args.phone,
+    // });
   },
 });

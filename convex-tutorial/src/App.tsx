@@ -1,12 +1,28 @@
-// import { useMutation } from "convex/react";
-// import { api } from "../convex/_generated/api";
-// import { useEffect, useState } from "react";
-// import { faker } from "@faker-js/faker";
-
+import "./index.css";
 import { AuthLoading, Unauthenticated, Authenticated } from "convex/react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router";
-import { SignIn } from "./pages/auth/login/page";
+import { Authenticate } from "./pages/auth/authenticate";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AuthLoading>
+        <p>loading auth</p>
+      </AuthLoading>
+      <Unauthenticated>
+        <Routes>
+          <Route path="/*" element={<Authenticate />} />
+        </Routes>
+      </Unauthenticated>
+      <Authenticated>
+        <Routes>
+          <Route path="/" element={<p>Authenticated</p>} />
+        </Routes>
+      </Authenticated>
+    </BrowserRouter>
+  );
+}
 
 // // For demo purposes. In a real app, you'd have real user data.
 // const NAME = getOrSetFakeName();
@@ -82,26 +98,3 @@ import { SignIn } from "./pages/auth/login/page";
 //   }
 //   return name;
 // }
-
-export default function App() {
-  return (
-    <BrowserRouter>
-      <AuthLoading>
-        <p>loading auth</p>
-      </AuthLoading>
-      <Unauthenticated>
-        <Routes>
-          <Route path="/*" element={<p>Unauthenticated</p>} />
-          <Route path="/login" element={<p>Unauthenticated</p>} />
-          <Route path="/register" element={<p>Unauthenticated</p>} />
-
-        </Routes>
-      </Unauthenticated>
-      <Authenticated>
-        <Routes>
-          <Route path="/" element={<p>Authenticated</p>} />
-        </Routes>
-      </Authenticated>
-    </BrowserRouter>
-  );
-}

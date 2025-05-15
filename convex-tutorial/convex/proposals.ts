@@ -17,18 +17,16 @@ export const createProposal = mutation({
     timeline_weeks: v.string(),
     payment_terms: v.string(),
     status: v.string(),
-    created_at: v.string(),
   },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
-    await ctx.db.insert("proposals", {
-      study_id: args.study_id,
-      submitted_by: args.submitted_by,
-      fee_details: args.fee_details,
-      timeline_weeks: args.timeline_weeks,
-      payment_terms: args.payment_terms,
-      status: args.status,
-      created_at: Date.now(),
-    });
+    // await ctx.db.insert("proposals", {
+    //   study_id: args.study_id,
+    //   submitted_by: args.submitted_by,
+    //   fee_details: args.fee_details,
+    //   timeline_weeks: args.timeline_weeks,
+    //   payment_terms: args.payment_terms,
+    //   status: args.status,
+    // });
   },
 });
