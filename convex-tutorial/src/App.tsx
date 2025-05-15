@@ -3,6 +3,8 @@ import { AuthLoading, Unauthenticated, Authenticated } from "convex/react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router";
 import { Authenticate } from "./pages/auth/authenticate";
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
 
 export default function App() {
   return (
@@ -12,7 +14,8 @@ export default function App() {
       </AuthLoading>
       <Unauthenticated>
         <Routes>
-          <Route path="/*" element={<Authenticate />} />
+          <Route path="/*" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Unauthenticated>
       <Authenticated>

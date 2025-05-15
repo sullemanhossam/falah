@@ -1,5 +1,10 @@
+import { useAuthActions } from "@convex-dev/auth/react";
+import { useState } from "react";
 
 export default function Login() {
+  const { signIn } = useAuthActions();
+  const [step, setStep] = useState<"signUp" | "signIn">("signIn");
+
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -18,7 +23,16 @@ export default function Login() {
                 </h2>
               </div>
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form action="#" method="POST" className="space-y-6">
+                <form
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    const formData = new FormData(event.currentTarget);
+                    void signIn("password", formData);
+                  }}
+                  className="space-y-6"
+                >
+                  <input name="flow" type="hidden" value={step} />
+
                   <div>
                     <label
                       htmlFor="email"
@@ -80,7 +94,7 @@ export default function Login() {
                 <p className="mt-10 text-center text-sm/6 text-gray-500">
                   Not a member?{" "}
                   <a
-                    href="#"
+                    href="/register"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Start a 14 day free trial
