@@ -21,7 +21,7 @@ const schema = defineSchema({
     type: v.string(),
     companySize: v.string(),
     // updated_at: v.string(),
-  }),
+  }).index("name", ["name"])
   // Your othe
   // r tables...
 });

@@ -1,25 +1,12 @@
-import { query } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
+import { getUserId } from "./functions/getUserId";
 
-export const getCurrentUser = query(async (ctx) => {
-  // get the userIdentity
-  const identity = await ctx.auth.getUserIdentity();
-  if (identity === null) {
-    return null;
-  }
 
-  // console.log(identity);
 
-  // split the token into UserId and token
-  const parts = identity.subject.split("|");
-  if (parts.length < 2) {
-    console.error("Invalid identity.subject format");
-    return null;
-  }
 
-  // console.log("First part:", parts[0]);
-  // console.log("Second part:", parts[1]);
-  const userId = parts[0];
-
+export const getCurrentUser = query( async (ctx) => {
+ 
+ const userId = await getUserId(ctx)
   // turn the userId string into a validID for a table
   const userDocId = ctx.db.normalizeId("users", userId);
   if (userDocId === null) {

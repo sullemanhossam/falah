@@ -12,7 +12,6 @@ export default function Details() {
     name: "",
   });
 
-  
 
     const isFormValid = Object.values(formData).every((val) => val.trim() !== "");
 
@@ -25,7 +24,7 @@ export default function Details() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const submissionData = {
@@ -35,6 +34,10 @@ export default function Details() {
     };
 
     console.log("Submitted Form Data:", submissionData);
+
+   await createOrganization({ name: formData.name, type: companyType, companySize:employeeCount });
+
+
   };
 
   return (
