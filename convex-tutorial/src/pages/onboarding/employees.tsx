@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { useLocation, useNavigate } from "react-router"
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 const employeeCounts = [
   { value: "1", label: "1" },
@@ -8,24 +8,29 @@ const employeeCounts = [
   { value: "21-100", label: "21 – 100" },
   { value: "101-500", label: "101 – 500" },
   { value: "501+", label: "501+" },
-]
+];
 
 export default function Employees() {
-    const location = useLocation();
-    const { companyType } = location.state || {};
+  const location = useLocation();
+  const { companyType } = location.state || {};
 
-  const [selectedEmployeeCount, setSelectedEmployeeCount] = useState("")
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+  const [selectedEmployeeCount, setSelectedEmployeeCount] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     setTimeout(() => {
-      console.log("Form submitted with employee count:", selectedEmployeeCount)
-      navigate("/onboarding/details",{ state: { companyType: companyType, employeeCount: selectedEmployeeCount } })
-    }, 600)
-  }
+      console.log("Form submitted with employee count:", selectedEmployeeCount);
+      navigate("/onboarding/details", {
+        state: {
+          companyType: companyType,
+          employeeCount: selectedEmployeeCount,
+        },
+      });
+    }, 600);
+  };
 
   return (
     <main className="max-w-xl mx-auto p-4">
@@ -93,5 +98,5 @@ export default function Employees() {
         </div>
       </form>
     </main>
-  )
+  );
 }

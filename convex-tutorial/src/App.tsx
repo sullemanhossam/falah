@@ -2,23 +2,26 @@ import "./index.css";
 import { AuthLoading, Unauthenticated, Authenticated } from "convex/react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router";
-import Login from "./pages/auth/login";
-import Register from "./pages/auth/register";
 import OnboardingLayout from "./pages/onboarding/layout";
+import UnkownPath from "./not-found";
+import Register from "./pages/auth/register";
+import Spinner from "./loading";
+import Login from "./pages/auth/login";
 import Employees from "./pages/onboarding/employees";
 import CompanyType from "./pages/onboarding/company-type";
-import Spinner from "./loading";
-import Redirect from "./wildcard";
 import Details from "./pages/onboarding/details";
+import Dashboard from "./pages/dashboard";
+import NotFound from "./not-found";
 
 export default function App() {
   return (
     <BrowserRouter>
       <AuthLoading>
-      <Spinner/>
+        <Spinner />
       </AuthLoading>
       <Unauthenticated>
         <Routes>
+          {/* puttting a wildcard on any path will fire if the user is needed */}
           <Route path="/*" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
@@ -26,16 +29,14 @@ export default function App() {
       <Authenticated>
         <Routes>
           {/* onboarding */}
-           <Route element={<OnboardingLayout />}>
+          <Route element={<OnboardingLayout />}>
            <Route path="/onboarding/company-type" element={<CompanyType />} />
            <Route path="/onboarding/employees" element={<Employees />} />
-           <Route path="/onboarding/details" element={<Details />} />
+           <Route path="/onboarding/details" element={<Details />} /> 
+          </Route>
 
-           </Route>
-           
-    
-            /this wilcard wrapper recieves the user upon authenticating and directs them to their respected area
-          <Route path="/*" element={<Redirect/>} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Authenticated>
     </BrowserRouter>

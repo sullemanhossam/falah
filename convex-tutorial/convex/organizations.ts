@@ -1,19 +1,18 @@
-import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
+import { mutation } from "./_generated/server";
 
-export const get = query({
-  args: {},
-  handler: async (ctx) => {
-    return await ctx.db.query("organizations").collect();
-  },
-});
+// export const get = query({
+//   args: {},
+//   handler: async (ctx) => {
+//     return await ctx.db.query("organizations").collect();
+//   },
+// });
 
 export const createOrganization = mutation({
   args: {
     name: v.string(),
     type: v.string(),
     companySize: v.string(),
-    adminId: v.id("users"), // ✅ references the `users` table
   },
   handler: async (ctx, args) => {
     console.log("This TypeScript function is running on the server.");
@@ -22,7 +21,9 @@ export const createOrganization = mutation({
       name: args.name,
       type: args.type,
       companySize: args.companySize,
-      adminId: args.adminId, // ✅ stores reference
     });
+    // 
+    // setting custom claims for the user a role and a orgid as the newly created org
+ 
   },
 });
