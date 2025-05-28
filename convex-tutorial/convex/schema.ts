@@ -20,8 +20,13 @@ const schema = defineSchema({
     name: v.string(),
     type: v.string(),
     companySize: v.string(),
+    // change these to a number
     // updated_at: v.string(),
-  }).index("name", ["name"])
+  }).index("name", ["name"]),
+   study_requests: defineTable({
+    name: v.string(),
+    organizationId: v.string(),
+  }).index("by_organizationId", ["organizationId"]),
   // Your othe
   // r tables...
 });

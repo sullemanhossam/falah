@@ -1,15 +1,16 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useNavigate } from "react-router";
+import SponsorDashboard from "./sponsor";
+import CroDashboard from "./cro";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const user = useQuery(api.user.getCurrentUser, {});
-  const Organization  = useQuery(api.organizations.get, {});
-  
-  console.log(user);
-  console.log(Organization);
+  const organization = useQuery(api.organizations.get, {});
 
+  console.log(user);
+  console.log(organization);
 
   if (!user) {
     return <p>User must be logged in</p>;
@@ -20,11 +21,7 @@ export default function Dashboard() {
     navigate("/onboarding/company-type", {});
   }
 
-
-return (
-  <p>with role {user.role} </p>
-)
-
+  if (organization?.type == "cro") {
+    return <CroDashboard />;
+  } else if (organization?.type == "sponsor") return <SponsorDashboard />;
 }
-
-

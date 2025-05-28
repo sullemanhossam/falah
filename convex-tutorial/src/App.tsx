@@ -30,9 +30,9 @@ export default function App() {
         <Routes>
           {/* onboarding */}
           <Route element={<OnboardingLayout />}>
-           <Route path="/onboarding/company-type" element={<CompanyType />} />
-           <Route path="/onboarding/employees" element={<Employees />} />
-           <Route path="/onboarding/details" element={<Details />} /> 
+            <Route path="/onboarding/company-type" element={<CompanyType />} />
+            <Route path="/onboarding/employees" element={<Employees />} />
+            <Route path="/onboarding/details" element={<Details />} />
           </Route>
 
           <Route path="/" element={<Dashboard />} />

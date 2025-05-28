@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useLocation } from "react-router";
 import { api } from "../../../convex/_generated/api";
 
-export default function Details() {
+export default function StudyRequestForm() {
   const location = useLocation();
   const { companyType, employeeCount } = location.state || {};
-  const createOrganization = useMutation(api.organizations.createOrganization);
+  const createStudyRequest = useMutation(api.study_requests.create);
 
   const [formData, setFormData] = useState({
     name: "",

@@ -1,11 +1,14 @@
-import { v } from "convex/values";
-import { mutation, query } from "./_generated/server";
-import { getUser, getUserId } from "./functions/user";
+import { query } from "./_generated/server";
+import { getUser } from "./functions/user";
 
-export const get = query({
+// user should be able to query their organisations study request
+// ones they have made only
+
+export const getOurStudyRequests = query({
   args: {},
   handler: async (ctx) => {
     try {
+      // get the user
       const user = await getUser(ctx);
       console.log("User:", user);
 
@@ -14,20 +17,16 @@ export const get = query({
         return null;
       }
 
-      const organizationDocId = ctx.db.normalizeId(
-        "organizations",
-        user.organizationId,
-      );
-      console.log("Normalized Org ID:", organizationDocId);
+      // fetch study_requests for the user's organization
+     const orgRequests = await ctx.db
+  .query("study_requests")
+  .withIndex("by_organizationId", q =>
+    q.eq("organizationId", user.organizationId)
+  )
+  .collect();;
 
-      if (!organizationDocId) {
-        console.error("Failed to normalize organization ID");
-        return null;
-      }
-
-      const org = await ctx.db.get(organizationDocId);
-      console.log("Fetched Org:", org);
-      return org;
+      console.log("Fetched Org Requests:", orgRequests);
+      return orgRequests;
     } catch (err) {
       console.error("Error in handler:", err);
       return null;
@@ -35,7 +34,7 @@ export const get = query({
   },
 });
 
-export const createOrganization = mutation({
+export const createStudyRequest = mutation({
   args: {
     name: v.string(),
     type: v.string(),

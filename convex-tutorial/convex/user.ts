@@ -1,12 +1,8 @@
 import { mutation, query } from "./_generated/server";
-import { getUserId } from "./functions/getUserId";
+import { getUserId } from "./functions/user";
 
-
-
-
-export const getCurrentUser = query( async (ctx) => {
- 
- const userId = await getUserId(ctx)
+export const getCurrentUser = query(async (ctx) => {
+  const userId = await getUserId(ctx);
   // turn the userId string into a validID for a table
   const userDocId = ctx.db.normalizeId("users", userId);
   if (userDocId === null) {
