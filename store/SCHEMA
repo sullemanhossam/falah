@@ -1,0 +1,32 @@
+study_requests: defineTable({
+    createdBy: v.string(),
+    croId: v.string(),
+    sponsorId: v.string(),
+    title: v.string(),
+    description: v.string(),
+    status: v.string(),
+  }),
+  proposals: defineTable({
+    studyRequestId: v.string(),
+    cro_id: v.string(),
+    submitted_by: v.string(),
+    status: v.string(),
+  }),
+  organizations: defineTable({
+    name: v.string(),
+    type: v.string(),
+    companySize: v.string(),
+    // updated_at: v.string(),
+  }),
+  employees: defineTable({
+    organizationId: v.id("organizations"),
+    userId: v.id("users"),
+    email: v.string(),
+    role: v.string(),
+    // updated_at: v.string(),
+  }),
+  milestones: defineTable({
+    study_id: v.string(),
+    title: v.string(),
+    is_completed: v.string(),
+  }),

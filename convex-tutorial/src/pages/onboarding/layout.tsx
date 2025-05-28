@@ -1,29 +1,29 @@
-import React, { createContext, useState } from "react"
-import { useLocation, Link, Outlet } from "react-router"
-import { Button } from "../../components/Button"
-import useScroll from "../../lib/useScroll"
-import { cx } from "../../lib/utils"
+import React, { createContext, useState } from "react";
+import { useLocation, Link, Outlet } from "react-router";
+import { Button } from "../../components/Button";
+import useScroll from "../../lib/useScroll";
+import { cx } from "../../lib/utils";
 
 interface Step {
-  name: string
-  href: string
+  name: string;
+  href: string;
 }
 
 const steps: Step[] = [
-  { name: "Product selection", href: "/onboarding/product" },
+  { name: "Company Type", href: "/onboarding/company-type" },
   { name: "Employees", href: "/onboarding/employees" },
-  { name: "Infrastructure", href: "/onboarding/infrastructure" },
-]
+  { name: "Product selection", href: "/onboarding/details" },
+];
 
 interface StepProgressProps {
-  steps: Step[]
+  steps: Step[];
 }
 
 const StepProgress = ({ steps }: StepProgressProps) => {
-  const location = useLocation()
+  const location = useLocation();
   const currentStepIndex = steps.findIndex((step) =>
     location.pathname.startsWith(step.href),
-  )
+  );
 
   return (
     <div aria-label="Onboarding progress">
@@ -50,13 +50,12 @@ const StepProgress = ({ steps }: StepProgressProps) => {
         ))}
       </ol>
     </div>
-  )
-}
-
+  );
+};
 
 const OnboardingLayout: React.FC = () => {
-  const scrolled = useScroll(15)
-  
+  const scrolled = useScroll(15);
+
   return (
     <>
       <header
@@ -78,15 +77,15 @@ const OnboardingLayout: React.FC = () => {
           </span>
         </div>
         <StepProgress steps={steps} />
-        <Button variant="ghost" className="ml-auto w-fit" asChild={false}>
-          <Link to="/reports">Skip to dashboard</Link>
-        </Button>
+        {/* <Button variant="ghost" className="ml-auto w-fit" asChild={false}> */}
+        {/* <Link to="/reports">Skip to dashboard</Link> */}
+        {/* </Button> */}
       </header>
       <main id="main-content" className="mx-auto mb-20 mt-28 max-w-lg">
-      <Outlet />
+        <Outlet />
       </main>
     </>
-  )
-}
+  );
+};
 
-export default OnboardingLayout
+export default OnboardingLayout;

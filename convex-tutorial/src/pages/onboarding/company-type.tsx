@@ -1,25 +1,30 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router"
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 const companyType = [
-  { value: "Clinical Research Organization", label: "Clinical Research Organization" },
-  { value: "Sponsor", label: "Sponsor" }
-]
+  {
+    value: "cro",
+    label: "Clinical Research Organization",
+  },
+  { value: "sponsor", label: "Sponsor" },
+];
 
 export default function CompanyType() {
-  const [selectedCompanyType, setSelectedCompanyType] = useState("")
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+  const [selectedCompanyType, setSelectedCompanyType] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     setTimeout(() => {
-      console.log("Form submitted with employee count:", selectedCompanyType)
-      // pass the selected company type through react routers props so the next page can access this 
-      navigate("/onboarding/employees",{ state: { companyType: selectedCompanyType } })
-    }, 600)
-  }
+      console.log("Form submitted with employee count:", selectedCompanyType);
+      // pass the selected company type through react routers props so the next page can access this
+      navigate("/onboarding/employees", {
+        state: { companyType: selectedCompanyType },
+      });
+    }, 600);
+  };
 
   return (
     <main className="max-w-xl mx-auto p-4">
@@ -87,5 +92,5 @@ export default function CompanyType() {
         </div>
       </form>
     </main>
-  )
+  );
 }

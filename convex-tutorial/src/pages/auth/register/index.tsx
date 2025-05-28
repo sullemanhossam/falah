@@ -34,7 +34,6 @@ export default function Register() {
                 event.preventDefault();
                 const formData = new FormData(event.currentTarget);
                 void signIn("password", formData);
-                
               }}
               className="space-y-6"
             >

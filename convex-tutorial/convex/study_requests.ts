@@ -1,34 +1,71 @@
-import { mutation, query } from "./_generated/server";
-import { v } from "convex/values";
+import { query } from "./_generated/server";
+import { getUser } from "./functions/user";
 
-export const get = query({
+// user should be able to query their organisations study request
+// ones they have made only
+
+export const getOurStudyRequests = query({
   args: {},
   handler: async (ctx) => {
-    return await ctx.db.query("study_requests").collect();
+    try {
+      // get the user
+      const user = await getUser(ctx);
+      console.log("User:", user);
+
+      if (!user || !user.organizationId) {
+        console.error("Missing user or organizationId");
+        return null;
+      }
+
+      // fetch study_requests for the user's organization
+     const orgRequests = await ctx.db
+  .query("study_requests")
+  .withIndex("by_organizationId", q =>
+    q.eq("organizationId", user.organizationId)
+  )
+  .collect();;
+
+      console.log("Fetched Org Requests:", orgRequests);
+      return orgRequests;
+    } catch (err) {
+      console.error("Error in handler:", err);
+      return null;
+    }
   },
 });
 
 export const createStudyRequest = mutation({
   args: {
-    user: v.string(),
-    sponsor_id: v.string(),
-    title: v.string(),
-    description: v.string(),
-    therapeutic_areas: v.string(),
-    region: v.string(),
-    status: v.string(),
-    created_at: v.string(),
+    name: v.string(),
+    type: v.string(),
+    companySize: v.string(),
   },
   handler: async (ctx, args) => {
-    console.log("This TypeScript function is running on the server.");
-    // await ctx.db.insert("study_requests", {
-    //   user: args.user,
-    //   sponsor_id: args.sponsor_id,
-    //   title: args.title,
-    //   description: args.description,
-    //   therapeutic_areas: args.therapeutic_areas,
-    //   region: args.region,
-    //   status: args.status,
-    // });
+    // Enforce unique organization name
+    const existing = await ctx.db
+      .query("organizations")
+      .withIndex("name", (q) => q.eq("name", args.name))
+      .first();
+
+    if (existing) {
+      throw new Error(`Organization with name "${args.name}" already exists.`);
+    } else {
+      // Create the new organization
+      const organizationId = await ctx.db.insert("organizations", {
+        name: args.name,
+        type: args.type,
+        companySize: args.companySize,
+      });
+      // Get current user's ID
+      const userId = await getUserId(ctx);
+
+      // Update user with admin role and organization ID
+      await ctx.db.patch(userId, {
+        role: "admin",
+        organizationId,
+      });
+
+      return organizationId;
+    }
   },
 });

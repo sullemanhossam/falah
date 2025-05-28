@@ -4,38 +4,31 @@ import { v } from "convex/values";
 
 const schema = defineSchema({
   ...authTables,
-  study_requests: defineTable({
-    createdBy: v.string(),
-    croId: v.string(),
-    sponsorId: v.string(),
-    title: v.string(),
-    description: v.string(),
-    status: v.string(),
-  }),
-  proposals: defineTable({
-    studyRequestId: v.string(),
-    cro_id: v.string(),
-    submitted_by: v.string(),
-    status: v.string(),
-  }),
+  users: defineTable({
+    name: v.optional(v.string()),
+    image: v.optional(v.string()),
+    email: v.optional(v.string()),
+    emailVerificationTime: v.optional(v.number()),
+    phone: v.optional(v.string()),
+    phoneVerificationTime: v.optional(v.number()),
+    isAnonymous: v.optional(v.boolean()),
+    // other "users" fields...
+    role: v.optional(v.string()),
+    organizationId: v.optional(v.string()),
+  }).index("email", ["email"]),
   organizations: defineTable({
     name: v.string(),
     type: v.string(),
     companySize: v.string(),
-    adminId: v.id("users"),
+    // change these to a number
     // updated_at: v.string(),
-  }),
-  employees: defineTable({
-    organizationId: v.id("organizations"),
-    userId: v.id("users"),
-    // updated_at: v.string(),
-  }),
-  milestones: defineTable({
-    study_id: v.string(),
-    title: v.string(),
-    is_completed: v.string(),
-  }),
-  // Your other tables...
+  }).index("name", ["name"]),
+   study_requests: defineTable({
+    name: v.string(),
+    organizationId: v.string(),
+  }).index("by_organizationId", ["organizationId"]),
+  // Your othe
+  // r tables...
 });
 
 export default schema;
