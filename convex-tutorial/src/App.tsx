@@ -22,8 +22,8 @@ export default function App() {
       <Unauthenticated>
         <Routes>
           {/* puttting a wildcard on any path will fire if the user is needed */}
-          <Route path="/*" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/*" element={<Login signIn={undefined} step={undefined} />} />
+          <Route path="/register" element={<Register signIn={undefined} step={undefined} />} />
         </Routes>
       </Unauthenticated>
       <Authenticated>

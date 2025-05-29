@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 type StudyRequest = {
   name: string;
@@ -13,6 +13,5 @@ function generateStudyRequest(): StudyRequest {
 }
 
 export const myFaker = {
-  study_requests: Array.from({ length: 10 }, generateStudyRequest)
+  study_requests: Array.from({ length: 10 }, generateStudyRequest),
 };
-

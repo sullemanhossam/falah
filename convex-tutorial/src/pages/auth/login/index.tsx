@@ -1,9 +1,9 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
 
-export default function Login() {
-  const { signIn } = useAuthActions();
-  const [step, setStep] = useState<"signUp" | "signIn">("signIn");
+export default function Login({signIn,step}) {
+  // const { signIn } = useAuthActions();
+  // const [step, setStep] = useState<"signUp" | "signIn">("signIn");
 
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">

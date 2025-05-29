@@ -1,9 +1,9 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
 
-export default function Register() {
-  const { signIn } = useAuthActions();
-  const [step, setStep] = useState<"signUp" | "signIn">("signUp");
+export default function Register({signIn,step}) {
+  // const { signIn } = useAuthActions();
+  // const [step, setStep] = useState<"signUp" | "signIn">("signUp");
 
   return (
     <>

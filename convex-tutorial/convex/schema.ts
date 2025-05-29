@@ -23,7 +23,7 @@ const schema = defineSchema({
     // change these to a number
     // updated_at: v.string(),
   }).index("name", ["name"]),
-   study_requests: defineTable({
+  study_requests: defineTable({
     name: v.string(),
     organizationId: v.string(),
   }).index("by_organizationId", ["organizationId"]),

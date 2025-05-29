@@ -18,12 +18,12 @@ export const getOurStudyRequests = query({
       }
 
       // fetch study_requests for the user's organization
-     const orgRequests = await ctx.db
-  .query("study_requests")
-  .withIndex("by_organizationId", q =>
-    q.eq("organizationId", user.organizationId)
-  )
-  .collect();;
+      const orgRequests = await ctx.db
+        .query("study_requests")
+        .withIndex("by_organizationId", (q) =>
+          q.eq("organizationId", user.organizationId),
+        )
+        .collect();
 
       console.log("Fetched Org Requests:", orgRequests);
       return orgRequests;
