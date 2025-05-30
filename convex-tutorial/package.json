@@ -9,7 +9,8 @@
     "dev:frontend": "vite --open",
     "predev": "convex dev --once",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_b9ac401da1efb34"
   },
   "dependencies": {
     "@auth/core": "^0.37.0",
